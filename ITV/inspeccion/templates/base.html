@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}ITV{% endblock %}</title>
+</head>
+<body>
+    {% block portada %}
+        <h1>ITV</h1>
+    {% endblock %}
+    {% block barra %}
+        {% if user.is_authenticated %}
+            Sesión iniciada como <b>{{ user.username }}</b>
+            <br>
+        {% endif %}
+        <nav>
+            <a href="/">Inicio</a> |
+            <a href="/Coches">Coches</a> |
+            <a href="/Centros">Centros</a> |
+            {% if not user.is_authenticated %}
+                <a href="/login">Iniciar sesión</a> |
+            {% else %}
+                <a href="/logout">Cerrar sesión</a>
+            {% endif %}
+        </nav>
+
+    {% endblock %}
+    {% block subtitulo %}
+    {% endblock %}
+    {% block contenido %}
+    {% endblock %}
+</body>
+</html>

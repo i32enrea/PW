@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block subtitulo %}
+    <h2>Editar Centro</h2>
+{% endblock %}
+
+{% block contenido %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="button" value="Atras" onclick="location.reload();location.href='/'"/>
+        <input type="submit" value="Guardar"/>
+    </form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block subtitulo %}
+  {% if user.is_authenticated %}
+
+    <br>
+    <input type="button" value="Crear Coche" onclick="location.reload();location.href='/crearCoches/'"/>
+
+  {% endif %}
+{% endblock %}
+
+  {% block contenido %}
+
+  <ul>
+  {%if coches%}
+    {% for elemento in coches %}
+      {% if elemento.author == request.user or user.is_superuser %}
+      <li><p><b><a href="/detalleCoches/{{elemento.id}}">{{ elemento.matricula }}</a></b></p></li>
+      {% endif %}
+    {% endfor %}
+  {%else%}
+    <h4> No hay ningún coche sosio </h4>
+    {% endif %}
+  </ul>
+{% endblock %}

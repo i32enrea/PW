@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+
+{% block contenido %}
+	 <h2> Detalles del coche {{cochespecifico.modelo}}:</h2>
+  <ul>
+      <p>Modelo: {{ cochespecifico.modelo }}</p>
+      <p>Matricula: {{ cochespecifico.matricula }}</p>
+      <p>tipo: {{ cochespecifico.tipo }}</p>
+      <p>Propietario: {{ cochespecifico.author }}</p>
+      <input type="button" value="Atrás" onclick="location.reload();location.href='/Coches'"/>
+
+			
+          <input type="button" value="Editar coche" onclick="location.reload();location.href='/editarCoches/{{ cochespecifico.id }}'"/>
+
+
+  </ul>
+{% endblock %}

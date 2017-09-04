@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block contenido %}
+
+	<h2> Añadir coche:</h2>
+
+  <form id='formulario' method="post" action="">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <input type="button" value="Cancelar" onclick="location.reload();location.href='/crearCoches'"/>
+    <input type="submit" value="Añadir"/>
+  </form>
+{% endblock %}

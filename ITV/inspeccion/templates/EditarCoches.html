@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block contenido %}
+	<h2> Editar coche:</h2>
+
+  <form id='formulario' method="post" action="">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <input type="button" value="Cancelar" onclick="location.reload();location.href='/Coches'"/>
+    <input type="submit" value="Modificar"/>
+  </form>
+{% endblock %}

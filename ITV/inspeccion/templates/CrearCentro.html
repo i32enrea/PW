@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block contenido %}
+
+	<h2> Añadir centro:</h2>
+
+  <form  method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="button" value="Cancelar" onclick="location.reload();location.href='/crearCentros'"/>
+    <input type="submit" value="Añadir"/>
+  </form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block subtitulo %}
+  <h2> Detalles del centro {{centroespecifico.nombre}}:</h2>
+{% endblock %}
+
+{% block contenido %}
+  <ul>
+      <p>Nombre: {{ centroespecifico.nombre }}</p>
+      <p>Direccion: {{ centroespecifico.direccion }}</p>
+      <p>Telefono: {{ centroespecifico.telefono }}</p>
+    <input type="button" value="Atrás" onclick="location.reload();location.href='/Centros'"/>
+    <input type="button" value="Editar Centro" onclick="location.reload();location.href='/editarCentros/{{ centroespecifico.id }}'"/>
+    <input type="button" value="Eliminar" onclick="location.reload();location.href='/eliminarCentros/{{ centroespecifico.id }}'"/>
+  </ul>
+{% endblock %}

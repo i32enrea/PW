@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block subtitulo %}
+  {% if user.is_authenticated %}
+    <br>
+    <input type="button" value="Añadir Centro" onclick="location.reload();location.href='/crearCentros/'"/>
+  {% endif %}
+{% endblock %}
+
+{% block contenido %}
+  <ul>
+    {% if centros %}
+      {% for elemento in centros %}
+        <p><b><a href="/detalleCentros/{{elemento.id}}">{{ elemento.nombre }} </a></b></p>
+      {% endfor %}
+    {% else %}
+      <h4> No hay ningun centro :( </h4>
+    {% endif %}
+  </ul>
+{% endblock %}
