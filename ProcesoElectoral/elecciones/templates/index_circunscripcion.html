@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<h2>Circunscripciones</h2>
+<ul>
+{% for c in circunscripciones %}
+	<li><a href="{% url 'elecciones:detalle_circunscripcion' c.pk %}">{{ c.nombre }}</a></li>
+{% endfor %}
+</ul>
+<a href="{% url 'elecciones:nueva_circunscripcion' %}">Añadir circunscripcion</a>
+{% endblock %}

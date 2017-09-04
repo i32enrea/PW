@@ -1,0 +1,23 @@
+<!DOCTyPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Web para gestionar un proceso electoral</title>
+</head>
+<body>
+	<navbar>
+		{% if user.is_authenticated %}
+			{{ user.username }}
+			<a href="{% url 'users:logout' %}">Salir</a>
+		{% else %}
+			<a href="{% url 'users:login' %}">Entrar</a>
+		{% endif %}
+	</navbar>
+	{% block contents %} {% endblock %}
+	<br/><br/>
+	<aside>
+		<a href="{% url 'elecciones:index_circunscripcion' %}">Circunscripciones</a>
+		<a href="{% url 'elecciones:asigna_escanyos' %}">Asigna escaños</a>
+	</aside>
+</body>
+</html>

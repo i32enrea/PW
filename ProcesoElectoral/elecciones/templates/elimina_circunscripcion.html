@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<h2>Eliminar una circunscripcion</h2>
+<p>¿Estás realmente seguro? Esta operación no se podrá deshacer</p>
+<form method="post" enctype="multipart/formdata" action="" role="form">
+	{% csrf_token %}
+	<b>Nombre:</b> {{ circunscripcion.nombre }}<br/>
+	<b>Escaños:</b> {{ circunscripcion.escanyos }}<br/>
+	<input type="submit" value="Eliminar">
+</form>
+{% endblock %}

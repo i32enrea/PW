@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<h2>Circunscripcion {{ circunscripcion.nombre }}</h2>
+<b>Escaños:</b> {{ circunscripcion.escanyos }}<br/>
+<a href="{% url 'elecciones:edita_circunscripcion' circunscripcion.pk %}">Editar</a> 
+<a href="{% url 'elecciones:elimina_circunscripcion' circunscripcion.pk %}">Eliminar</a><br/>
+<a href="{% url 'elecciones:index_mesa' circunscripcion.pk %}">Mesas</a>
+{% endblock %}

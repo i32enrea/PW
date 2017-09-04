@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<h2>Resultados de la mesa {{ mesa.nombre }}</h2>
+<ul>
+{% for resultado in resultados %}
+	<li>{{ resultado.partido }} - {{ resultado.votos }} votos</li>
+{% endfor %}
+</ul>
+<a href="{% url 'elecciones:nuevo_resultado' mesa.pk %}">Añadir resultado</a>
+{% endblock %}

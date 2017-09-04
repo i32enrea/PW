@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<h2>Mesa {{ mesa.nombre }}</h2>
+<b>Circunscripcion:</b> {{ mesa.circunscripcion.nombre }}<br/>
+<a href="{% url 'elecciones:edita_mesa' mesa.pk %}">Editar</a>
+<a href="{% url 'elecciones:elimina_mesa' mesa.pk %}">Eliminar</a>
+<a href="{% url 'elecciones:index_resultado' mesa.pk %}">Resultados</a>
+{% endblock %}

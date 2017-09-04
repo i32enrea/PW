@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<h2>Nueva mesa</h2>
+<form method="post">
+	{% csrf_token %}
+	<b>Circunscripcion:</b> {{ circunscripcion.nombre }}<br/>
+	{{ form.as_p }}
+	<input type="submit" value="Añadir">
+</form>
+{% endblock %}

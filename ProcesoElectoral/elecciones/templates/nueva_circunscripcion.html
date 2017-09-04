@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<h2>Añadir una circunscripcion</h2>
+<form method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Añadir">
+</form>
+{% endblock %}

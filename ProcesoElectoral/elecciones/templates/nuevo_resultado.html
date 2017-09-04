@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<h2>Añadir resultado</h2>
+<form method="post">
+	{% csrf_token %}
+	<b>Mesa:</b> {{ mesa.nombre }}<br/>
+	{{ form.as_p}}
+	<input type="submit" value="Guardar">
+</form>
+{% endblock %}

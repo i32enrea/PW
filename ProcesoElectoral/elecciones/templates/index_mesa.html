@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<h2>Mesas de la circunscripción {{ circunscripcion.nombre }}</h2>
+<ul>
+{% for mesa in mesas %}
+	<li><a href="{% url 'elecciones:detalle_mesa' mesa.pk %}">{{ mesa.nombre }}</a></li>
+{% endfor %}
+</ul>
+<a href="{% url 'elecciones:nueva_mesa' circunscripcion.pk %}">Añadir mesa</a>
+{% endblock %}

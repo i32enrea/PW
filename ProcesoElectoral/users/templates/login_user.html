@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<h2>Acceso</h2>
+<form method="post" enctype="multipart/formdata" action="" role="form">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Acceder">
+</form>
+{% endblock %}

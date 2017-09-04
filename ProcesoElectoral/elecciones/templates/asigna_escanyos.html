@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<h2>Votos obtenidos en total y asignación de escaños</h2>
+<table>
+	<tr>
+		<th>Partido</th><th>Escaños</th><th>Votos</th>
+	</tr>
+	{% for partido in partidos %}
+		<tr>	
+			<td>{{ partido.nombre }}</td><td>{{ partido.escanyos }}</td><td>{{ partido.votos }}</td>
+		</tr>
+	{% endfor %}
+</table>
+{% endblock %}
